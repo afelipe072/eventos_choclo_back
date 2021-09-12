@@ -27,7 +27,7 @@ app.get('/',(req,res)=>{
     );
 });
 
-app.use(usuariosRoutes);
+app.use('/api/usuarios',usuariosRoutes);
 
 
 export default app;
