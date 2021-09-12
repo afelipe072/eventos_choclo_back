@@ -18,13 +18,14 @@
     "morgan": "^1.10.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.6.5",
+    "nodemon": "^2.0.12"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
-    "@babel/preset-env": "^7.15.6",
-    "nodemon": "^2.0.12"
+    "@babel/preset-env": "^7.15.6"
+    
   }
 }
