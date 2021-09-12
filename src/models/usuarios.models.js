@@ -25,6 +25,8 @@ const Usuario=sequelize.define('usuarios',{
         type:Sequelize.TEXT
     }
 
+},{
+    timestamps:false
 });
 
 export default Usuario;

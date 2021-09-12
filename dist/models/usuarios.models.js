@@ -34,6 +34,8 @@ var Usuario = _database.sequelize.define('usuarios', {
   contraseña_usuario: {
     type: _sequelize["default"].TEXT
   }
+}, {
+  timestamps: false
 });
 
 var _default = Usuario;
