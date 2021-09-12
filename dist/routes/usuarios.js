@@ -7,6 +7,9 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
+var _usuarios = require("../controllers/usuarios.controller");
+
 var router = (0, _express.Router)();
+router.get('/', _usuarios.getUsuarios);
 var _default = router;
 exports["default"] = _default;
