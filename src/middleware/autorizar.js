@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import Usuario from '../models/usuarios.models'
+import '@babel/polyfill'
 
 export const verificar = async (req,res,next)=>{
     const token = req.headers["x-acces-token"]
@@ -10,6 +11,7 @@ export const verificar = async (req,res,next)=>{
     req.userId=decode.id
     
     const usuario = await Usuario.findOne({where:{id:req.userId}})
+    if(!usuario)return res.status(403).json({message:"Usuario no econtrado"})
     
 
     next()

@@ -9,6 +9,8 @@ var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 
 var _usuarios = _interopRequireDefault(require("../models/usuarios.models"));
 
+require("@babel/polyfill");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -45,9 +47,20 @@ var verificar = /*#__PURE__*/function () {
 
           case 7:
             usuario = _context.sent;
+
+            if (usuario) {
+              _context.next = 10;
+              break;
+            }
+
+            return _context.abrupt("return", res.status(403).json({
+              message: "Usuario no econtrado"
+            }));
+
+          case 10:
             next();
 
-          case 9:
+          case 11:
           case "end":
             return _context.stop();
         }
