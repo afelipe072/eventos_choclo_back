@@ -7,11 +7,10 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var _usuarios = require("../controllers/usuarios.controller");
-
-var _autorizar = require("../middleware/autorizar");
+var _auth = require("../controllers/auth.controller");
 
 var router = (0, _express.Router)();
-router.get('/', [_autorizar.verificar, _autorizar.isAdmin], _usuarios.getUsuarios);
+router.post('/singup', _auth.singUp);
+router.post('/login', _auth.longIn);
 var _default = router;
 exports["default"] = _default;

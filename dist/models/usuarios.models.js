@@ -14,6 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var Usuario = _database.sequelize.define('usuarios', {
   id: {
     type: _sequelize["default"].INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   nombre_usuario: {
