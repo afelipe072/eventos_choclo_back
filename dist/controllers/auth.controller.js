@@ -114,8 +114,9 @@ function _longIn() {
               token = _jsonwebtoken["default"].sign({
                 id: usuario.id
               }, 'api-user', {
-                expiresIn: 120
-              });
+                expiresIn: 50000
+              }); // token
+
               res.json({
                 message: "Bienvenido",
                 data: [usuario.id, usuario.nombre_usuario, usuario.apellido_usuario, usuario.correo_usuario, usuario.celular_usuario],

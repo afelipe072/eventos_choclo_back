@@ -19,6 +19,10 @@ var _usuarios = _interopRequireDefault(require("./routes/usuarios"));
 
 var _auth = _interopRequireDefault(require("./routes/auth.routes"));
 
+var _eventos = _interopRequireDefault(require("./routes/eventos"));
+
+var _compras = _interopRequireDefault(require("./routes/compras"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -41,7 +45,13 @@ app.get('/', function (req, res) {
     version: app.get('pkg').version
   });
 });
-app.use('/api/usuarios', _usuarios["default"]);
-app.use('/api/auth', _auth["default"]);
+app.use('/api/usuarios', _usuarios["default"]); //usuarios
+
+app.use('/api/auth', _auth["default"]); //inicio de sesión y registro
+
+app.use('/api/eventos', _eventos["default"]); //eventos
+
+app.use('/api/compras', _compras["default"]); //compras
+
 var _default = app;
 exports["default"] = _default;
