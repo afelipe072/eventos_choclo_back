@@ -30,7 +30,9 @@ function _getEventos() {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return _eventos["default"].findAll();
+            return _eventos["default"].findAll({
+              order: [['id', 'ASC']]
+            });
 
           case 3:
             eventos = _context.sent;
