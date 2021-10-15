@@ -12,9 +12,9 @@ var _usuarios = require("../controllers/usuarios.controller");
 var _autorizar = require("../middleware/autorizar");
 
 var router = (0, _express.Router)();
-router.get('/', [_autorizar.verificar, _autorizar.isAdmin], _usuarios.getUsuarios);
-router.get('/:id', [_autorizar.verificar], _usuarios.getOneUsuario);
-router["delete"]('/:id', [_autorizar.verificar], _usuarios.deleteUsuario);
-router.put('/:id', [_autorizar.verificar], _usuarios.updateUsuario);
+router.get('/', _usuarios.getUsuarios);
+router.get('/:id', _usuarios.getOneUsuario);
+router["delete"]('/:id', _usuarios.deleteUsuario);
+router.put('/:id', _usuarios.updateUsuario);
 var _default = router;
 exports["default"] = _default;

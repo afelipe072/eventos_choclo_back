@@ -5,10 +5,10 @@ import { verificar ,isAdmin} from "../middleware/autorizar";
 
 const router = Router();
 
-router.get('/',[verificar,isAdmin],getUsuarios)
-router.get('/:id',[verificar],getOneUsuario)
-router.delete('/:id',[verificar],deleteUsuario)
-router.put('/:id',[verificar],updateUsuario)
+router.get('/',getUsuarios)
+router.get('/:id',getOneUsuario)
+router.delete('/:id',deleteUsuario)
+router.put('/:id',updateUsuario)
 
 
 export default router;
