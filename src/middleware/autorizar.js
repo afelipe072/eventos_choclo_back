@@ -25,8 +25,6 @@ export const isAdmin = async (req,res,next)=>{
     next()
    }else{
        return res.status(403).json({message:"Requiere un rol de administrador"})
-   }
-
-   
+   }   
    
 }

@@ -2,6 +2,7 @@ import Usuario from "../models/usuarios.models";
 import jwt from 'jsonwebtoken'
 import { encrypt,compare } from "../helpers/contraseñaBcrypt";
 
+
 export async function singUp (req,res){    
        try {
            //datos enviados 
@@ -43,7 +44,7 @@ export async function longIn (req,res){
             const checkContraseña = await compare(contraseña_usuario,usuario.contraseña_usuario)
             
             if(checkContraseña){
-                let token=jwt.sign({id:usuario.id},'api-user',{expiresIn:120})
+                let token=jwt.sign({id:usuario.id},'api-user',{expiresIn:50000}) // token
                 res.json({
                     message:"Bienvenido",
                     data: [usuario.id,
@@ -55,13 +56,13 @@ export async function longIn (req,res){
                     token
                 })
             }else{
-                res.json({
+                res.status(400).json({
                     message:"Contraseña incorrecta"
                 })
             }
 
         }else{
-            res.json({
+            res.status(400).json({
                 message:"El usuario no se encuentra registrado!"
             })
         }  

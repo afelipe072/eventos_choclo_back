@@ -8,6 +8,10 @@ import usuariosRoutes from './routes/usuarios';
 
 import authRoutes from './routes/auth.routes'
 
+import eventosRoutes from './routes/eventos'
+
+import comprasRoutes from './routes/compras'
+
 const app = express();
 
 app.set('pkg',pkg);
@@ -30,9 +34,9 @@ app.get('/',(req,res)=>{
     );
 });
 
-app.use('/api/usuarios',usuariosRoutes);
-
-app.use('/api/auth',authRoutes)
-
+app.use('/api/usuarios',usuariosRoutes);     //usuarios
+app.use('/api/auth',authRoutes)             //inicio de sesión y registro
+app.use('/api/eventos',eventosRoutes)       //eventos
+app.use('/api/compras',comprasRoutes)       //compras
 
 export default app;
