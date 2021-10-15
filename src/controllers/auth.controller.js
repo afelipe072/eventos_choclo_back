@@ -56,13 +56,13 @@ export async function longIn (req,res){
                     token
                 })
             }else{
-                res.json({
+                res.status(400).json({
                     message:"Contraseña incorrecta"
                 })
             }
 
         }else{
-            res.json({
+            res.status(400).json({
                 message:"El usuario no se encuentra registrado!"
             })
         }  

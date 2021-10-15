@@ -123,7 +123,7 @@ function _longIn() {
                 token: token
               });
             } else {
-              res.json({
+              res.status(400).json({
                 message: "Contraseña incorrecta"
               });
             }
@@ -132,7 +132,7 @@ function _longIn() {
             break;
 
           case 12:
-            res.json({
+            res.status(400).json({
               message: "El usuario no se encuentra registrado!"
             });
 
