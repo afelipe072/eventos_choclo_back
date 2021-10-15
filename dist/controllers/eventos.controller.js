@@ -141,17 +141,9 @@ function _updateEvento() {
 
           case 5:
             eventos = _context3.sent;
-
-            if (eventos === 1) {
-              res.json({
-                message: 'Evento actualizado correctamente' + eventos
-              });
-            } else {
-              res.status(404).json({
-                message: 'Evento NO encontrado'
-              });
-            }
-
+            res.json({
+              message: 'Evento actualizado correctamente' + eventos
+            });
             _context3.next = 12;
             break;
 

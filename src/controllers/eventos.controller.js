@@ -73,16 +73,10 @@ export async function updateEvento(req,res){
             id
         }
     })
-
-    if(eventos===1){
+    
     res.json({
         message:'Evento actualizado correctamente'+eventos
     })
-    }else{
-        res.status(404).json({
-            message:'Evento NO encontrado'
-        }) 
-    }    
 
     }catch(e){
         console.log(e)
