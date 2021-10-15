@@ -51,7 +51,8 @@ export async function longIn (req,res){
                         usuario.nombre_usuario,
                         usuario.apellido_usuario,
                         usuario.correo_usuario,
-                        usuario.celular_usuario
+                        usuario.celular_usuario,
+                        usuario.rol_usuario
                         ],
                     token
                 })
